@@ -13,7 +13,7 @@ function setup() {
   colour.add(color(255, 255, 0));
 
 	createCanvas(windowWidth, windowHeight);
-  // background(255, 0, 0);
+  background(255, 0, 0);
   stroke(255);
   for (let i = 0; i < 70; i ++) {
     for (let j = 0; j < 40; j ++) {
