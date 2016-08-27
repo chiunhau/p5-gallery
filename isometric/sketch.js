@@ -23,12 +23,12 @@ function setup() {
     }
   }
   // Math.floor(Math.random() * 4) +
-  for (var _j = 0; _j < 40; _j++) {
+  for (var _j = 0; _j < 30; _j++) {
     var randomGrid = grids[Math.floor(Math.random() * grids.length)];
     iso(randomGrid[0], randomGrid[1], 4);
   }
 
-  for (var _j2 = 0; _j2 < 50; _j2++) {
+  for (var _j2 = 0; _j2 < 40; _j2++) {
     var randomGrid = grids[Math.floor(Math.random() * grids.length)];
     iso(randomGrid[0], randomGrid[1], 3);
   }
@@ -43,12 +43,12 @@ function setup() {
     iso(randomGrid[0], randomGrid[1], 1);
   }
 
-  for (var _j5 = 0; _j5 < 200; _j5++) {
+  for (var _j5 = 0; _j5 < 100; _j5++) {
     var randomGrid = grids[Math.floor(Math.random() * grids.length)];
     iso(randomGrid[0], randomGrid[1], 0.5);
   }
 
-  for (var _j6 = 0; _j6 < 300; _j6++) {
+  for (var _j6 = 0; _j6 < 100; _j6++) {
     var randomGrid = grids[Math.floor(Math.random() * grids.length)];
     iso(randomGrid[0], randomGrid[1], 0.25);
   }

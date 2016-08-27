@@ -21,12 +21,12 @@ function setup() {
     }
   }
   // Math.floor(Math.random() * 4) +
-  for (let j = 0; j < 40; j ++) {
+  for (let j = 0; j < 30; j ++) {
     var randomGrid = grids[Math.floor(Math.random() * grids.length)]
     iso(randomGrid[0], randomGrid[1], 4)
   }
 
-  for (let j = 0; j < 50; j ++) {
+  for (let j = 0; j < 40; j ++) {
     var randomGrid = grids[Math.floor(Math.random() * grids.length)]
     iso(randomGrid[0], randomGrid[1], 3)
   }
@@ -41,12 +41,12 @@ function setup() {
     iso(randomGrid[0], randomGrid[1], 1)
   }
 
-  for (let j = 0; j < 200; j ++) {
+  for (let j = 0; j < 100; j ++) {
     var randomGrid = grids[Math.floor(Math.random() * grids.length)]
     iso(randomGrid[0], randomGrid[1], 0.5)
   }
 
-  for (let j = 0; j < 300; j ++) {
+  for (let j = 0; j < 100; j ++) {
     var randomGrid = grids[Math.floor(Math.random() * grids.length)]
     iso(randomGrid[0], randomGrid[1], 0.25)
   }

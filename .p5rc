@@ -1,8 +1,7 @@
 {
   "name": "p5",
   "projects": [
-    "quad-gradient",
-    "demo",
-    "isometric"
+    "isometric",
+    "lerp-circle"
   ]
 }
