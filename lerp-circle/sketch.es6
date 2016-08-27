@@ -1,26 +1,47 @@
-const count = 100;
-const radius = 200;
+const count = 150;
+const radius = 180;
+
+let dots = [];
 
 function setup() {
 	createCanvas(windowWidth, windowHeight);
-  frameRate(10);
+
+  for (let i = 0; i < count; i ++) {
+    dots.push(new Dot(i));
+  }
 }
 
 function draw() {
-  background(255);
-  fill(255, 0, 0);
-  ellipse(windowWidth / 2, windowHeight / 2, 10, 10)
+  // background(255);
+  translate(windowWidth / 2, windowHeight / 2);
+  rotate(frameCount * 0.011);
+  translate(- windowWidth / 2, - windowHeight / 2);
+  let fader = 1 - (Math.abs(mouseX - windowWidth / 2) / (windowWidth / 2)) * 0.5;
   for (let i = 0; i < count; i ++) {
-    const randomX = Math.floor(Math.random() * windowWidth)
-    const randomY = Math.floor(Math.random() * windowHeight)
 
-    const circleX = Math.cos(i * 2 * PI / count) * radius + windowWidth / 2;
-    const circleY = Math.sin(i * 2 * PI / count) * radius + windowHeight / 2;
-    console.log(circleX)
-
-    let fader = 1 - (Math.abs(mouseX - windowWidth / 2) / (windowWidth / 2)) * 0.4;
-    fill(100);
-    noStroke();
-    ellipse(lerp(randomX, circleX, fader), lerp(randomY, circleY, fader), 5, 5);
+    dots[i].update(fader);
+    dots[i].render();
   }
+}
+
+function Dot(i) {
+  let circleX = Math.floor(Math.cos(i * 2 * Math.PI / count) * radius + windowWidth / 2);
+  let circleY = Math.floor(Math.sin(i * 2 * Math.PI / count) * radius + windowHeight / 2);
+  this.circlePos = createVector(circleX, circleY);
+  this.randomPos = createVector(Math.floor(Math.random() * height + (width - height) / 2), Math.floor(Math.random() * height));
+  this.currentPos = this.randomPos.copy();
+  this.size = Math.floor(Math.random() * 18 + 1);
+  this.fillColor = color(Math.random() * 50 + 200);
+}
+
+Dot.prototype.update = function(fader) {
+  this.currentPos.x = lerp(this.randomPos.x, this.circlePos.x, fader);
+  this.currentPos.y = lerp(this.randomPos.y, this.circlePos.y, fader);
+  // this.size = Math.floor(Math.sin(frameCount * 0.01) * 20 + 5);
+}
+
+Dot.prototype.render = function() {
+  stroke(0);
+  fill(this.fillColor);
+  ellipse(this.currentPos.x, this.currentPos.y, this.size, this.size);
 }
