@@ -3,6 +3,7 @@
   "projects": [
     "isometric",
     "lerp-circle",
-    "lerp-circle-2"
+    "lerp-circle-2",
+    "cross-grid"
   ]
 }
