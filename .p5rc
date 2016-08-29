@@ -4,6 +4,8 @@
     "isometric",
     "lerp-circle",
     "lerp-circle-2",
-    "cross-grid"
+    "cross-grid",
+    "cross-grid-2",
+    "circle-forms"
   ]
 }
