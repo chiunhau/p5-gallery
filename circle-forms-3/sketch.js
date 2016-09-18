@@ -3,6 +3,7 @@ function setup() {
   rectMode(CENTER);
   colorMode(HSL, 100);
   background(255, 0, 0);
+  frameRate(30);
 }
 
 function draw() {
@@ -22,4 +23,8 @@ function drawCircle(s) {
     rect(0, 0, w, 2);
     pop();
   }
+}
+
+function mousePressed() {
+  saveFrames('test', 'png', 20, 30);
 }
