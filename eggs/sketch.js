@@ -1,6 +1,6 @@
 var xoff1 = 0,xoff2 = 0, vertices1, vertices2;
 function setup() {
-	createCanvas(windowWidth, windowHeight);
+	createCanvas(600, 400);
 	noStroke();
 	frameRate(40);
 }
@@ -8,7 +8,7 @@ function setup() {
 function draw() {
 	translate(width / 2, height / 2);
 	background(255, 60, 60);
-	
+
 	fill(255);
 	vertices1 = [];
 	for(i = 0; i < 8; i ++) {

@@ -36,7 +36,7 @@ f5.Grid = function() {
       for (var c = 0; c < this.cols; c ++) {
         push();
         translate(c * this.w, r * this.h);
-        cb();
+        cb(r, c);
         pop();
       }
     }

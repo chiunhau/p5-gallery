@@ -16,7 +16,7 @@ function setup() {
 function draw() {
 	translate(0, windowHeight / 2);
 	translate(frameCount * 0.4, 0);
-	line1(frameCount * 0.01, Math.sin(frameCount * 0.001)  * 300, frameCount);
+	line1(frameCount * 0.01, Math.sin(frameCount * 0.015)  * 300, frameCount);
 }
 
 function line1(angle, len, i) {
