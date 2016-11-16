@@ -1,11 +1,11 @@
 var xoff = 0, xoff1 = 0, xoff2 = 0, vertices1, vertices2;
-var bacon;
+var bacons = [];
 
 function setup() {
 	createCanvas(windowWidth, windowHeight);
 	noStroke();
 	curveTightness(-0.1);
-	bacon = new Bacon(0, 120, 240, 360, 480);
+	bacons.push(new Bacon(0, 120, 240, 360, 480));
 }
 
 function draw() {
@@ -19,8 +19,17 @@ function draw() {
 
 	translate(width / 3, - 200);
 
-	bacon.update();
-	bacon.render();
+	for (var i = 0; i < bacons.length; i ++) {
+		bacons[i].update();
+		bacons[i].render();
+	}
+
+}
+
+function mouseClicked() {
+	if (mouseX > width / 2) {
+		bacons.push(new Bacon(0, 120, 240, 360, 480))
+	}
 }
 
 function egg() {
@@ -48,14 +57,19 @@ function egg() {
 function Bacon(x1, x2, x3, x4, x5) {
 	this.x = [x1, x2, x3, x4, x5];
 	this.y = [];
-
+	this.randomYOffset = [
+		random(10),
+		random(10),
+		random(10),
+		random(10)
+	];
 	this.update = function() {
 		this.y = [
-			noise(xoff) *150,
-			noise(xoff + 1) * 250,
-			noise(xoff + 2) * 250,
-			noise(xoff + 3) * 250,
-			noise(xoff + 4) * 250
+			noise(xoff) * 250,
+			noise(xoff + this.randomYOffset[0]) * 250,
+			noise(xoff + this.randomYOffset[1]) * 250,
+			noise(xoff + this.randomYOffset[2]) * 250,
+			noise(xoff + this.randomYOffset[3]) * 250
 		];
 
 		xoff += (mouseX > width / 2 ? 0.06 : 0.001);
@@ -87,7 +101,7 @@ function Bacon(x1, x2, x3, x4, x5) {
 		fill(255);
 		this.renderStrip(120);
 
-		fill(255, 0, 0);
+		fill('#ff3429');
 		this.renderStrip(30);
 		translate(0, 60);
 		this.renderStrip(20);
