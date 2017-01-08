@@ -43,7 +43,11 @@ function draw() {
 function makePerspective(geometries) {
 	var perspectiveGeometries = [];
 	for (var i = 0; i < geometries.length; i ++) {
-		perspectiveGeometries.push([geometries[i][0] * (1 + geometries[i][2] * magicNum), geometries[i][1] * (1 + geometries[i][2] * magicNum), geometries[i][2]]);
+		perspectiveGeometries.push([
+			geometries[i][0] * (1 + geometries[i][2] * magicNum),
+			geometries[i][1] * (1 + geometries[i][2] * magicNum),
+			geometries[i][2]
+		]);
 	}
 
 	return perspectiveGeometries
@@ -53,7 +57,11 @@ function makePerspective(geometries) {
 function makeProjection(perspectiveGeometries) {
 	var projectedGeometries = [];
 	for (var i = 0; i < perspectiveGeometries.length; i ++) {
-		projectedGeometries.push([width / 2 + perspectiveGeometries[i][0], height / 2 - perspectiveGeometries[i][1], perspectiveGeometries[i][2]]);
+		projectedGeometries.push([
+			width / 2 + perspectiveGeometries[i][0],
+			height / 2 - perspectiveGeometries[i][1],
+			perspectiveGeometries[i][2]
+		]);
 	}
 
 	return projectedGeometries
@@ -61,7 +69,11 @@ function makeProjection(perspectiveGeometries) {
 
 function drawTriangles(projectedGeometries) {
 	for (var i = 0; i < projectedGeometries.length; i += 3) {
-		fill(countBrightness(countNormal([projectedGeometries[i], projectedGeometries[i + 1], projectedGeometries[i + 2]])))
+		fill(countBrightness(countNormal([
+			projectedGeometries[i],
+			projectedGeometries[i + 1],
+			projectedGeometries[i + 2]
+		])));
 		triangle(
 			projectedGeometries[i][0], projectedGeometries[i][1],
 			projectedGeometries[i + 1][0], projectedGeometries[i + 1][1],
