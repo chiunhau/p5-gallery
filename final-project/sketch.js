@@ -117,5 +117,5 @@ function Repeller(x, y, power) {
 }
 
 function mouseClicked() {
-	repellers.push(new Repeller(mouseX, mouseY, 2000));
+	repellers.push(new Repeller(mouseX, mouseY, 2300));
 }
