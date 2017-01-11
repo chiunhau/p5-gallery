@@ -1,32 +1,8 @@
 {
   "name": "p5",
   "projects": [
-    "isometric",
-    "lerp-circle",
-    "lerp-circle-2",
-    "cross-grid",
-    "cross-grid-2",
-    "circle-forms",
-    "circle-forms-2",
-    "circle-forms-3",
-    "vehicle",
-    "waterfall",
-    "eggs",
-    "sin",
-    "f5",
-    "sin-circle",
-    "sin-circle-2",
-    "sin-translate",
-    "dani",
-    "tan-balls",
-    "tan-balls-2",
-    "1019",
-    "testest",
-    "gtt",
-    "midterm",
-    "mid2",
-    "bacon-test",
-    "mid3",
-    "fake-3d"
+    "fake-3d",
+    "fake-3d-2",
+    "final-project"
   ]
 }
