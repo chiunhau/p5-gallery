@@ -6,7 +6,7 @@ var flowfield;
 var swatch = new f5.Swatch();
 var counter = 0;
 function setup() {
-	createCanvas(1024, 768);
+	createCanvas(windowWidth, windowHeight);
 	background(0);
 	swatch.add(color('rgba(100, 150, 255, 0.2)'));
 	swatch.add(color('rgba(255, 255, 100, 0.2)'));
@@ -105,7 +105,11 @@ function Repeller(x, y, power) {
 
 		return dir
 	}
-}
+
+	this.render = function() {
+		fill(0, 10);
+		ellipse(this.pos.x, this.pos.y, 130);
+	}
 
 	this.reborn = function() {
 		this.pos.set(random(width), random(height))
@@ -113,5 +117,5 @@ function Repeller(x, y, power) {
 }
 
 function mouseClicked() {
-	repellers.push(new Repeller(mouseX, mouseY, 2500));
+	repellers.push(new Repeller(mouseX, mouseY, 2000));
 }
