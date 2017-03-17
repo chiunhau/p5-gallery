@@ -7,11 +7,12 @@ var swatch = new f5.Swatch();
 var counter = 0;
 function setup() {
 	createCanvas(windowWidth, windowHeight);
+	frameRate(60);
 	background(0);
-	swatch.add(color('rgba(100, 150, 255, 0.2)'));
+	swatch.add(color('rgba(28, 88, 246, 0.2)'));
 	swatch.add(color('rgba(255, 255, 100, 0.2)'));
 
-	flowfield = new FlowField(7);
+	flowfield = new FlowField(10);
 
 	for (var i = 0; i < particlesLength; i ++) {
 		particles.push(new Particle(random(width), random(height), 1));
@@ -20,7 +21,7 @@ function setup() {
 
 function draw() {
 
-	// background(0, 3);
+	// background(0);
 	// flowfield.display();
 	for (var i = 0; i < particlesLength; i ++) {
 		for (var m = 0; m < repellers.length; m ++) {
@@ -31,11 +32,11 @@ function draw() {
 		particles[i].update();
 		particles[i].render();
 	}
-	if (counter >= 3000) {
-		flowfield.init();
-		counter = 0;
-	}
-	counter += 1;
+	// if (counter >= 1500) {
+	// 	flowfield.init();
+	// 	counter = 0;
+	// }
+	// counter += 1;
 }
 
 
@@ -99,7 +100,7 @@ function Repeller(x, y, power) {
 		var dir = p5.Vector.sub(this.pos, p.pos);
 		var dist = dir.mag();
 		dir.normalize();
-		dist = constrain(dist, 1, 800);
+		dist = constrain(dist, 1,1000);
 		var f = -1 * this.power / (dist * dist);
 		dir.mult(f);
 
@@ -117,5 +118,5 @@ function Repeller(x, y, power) {
 }
 
 function mouseClicked() {
-	repellers.push(new Repeller(mouseX, mouseY, 2300));
+	repellers.push(new Repeller(mouseX, mouseY, 10000));
 }

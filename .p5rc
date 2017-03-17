@@ -3,6 +3,7 @@
   "projects": [
     "fake-3d",
     "fake-3d-2",
-    "final-project"
+    "final-project",
+    "physic-engine-demo"
   ]
 }
