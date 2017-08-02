@@ -12,7 +12,7 @@ function mousePressed() {
   particles.push(new Particle(mouseX, mouseY, random(1,3)));
 }
 function draw() {
-  background(360, 0, 50);
+  background(360, 100, 0);
   particles.map(function(p) {
     var gravity = createVector(0, 0.1);
     p.applyForce(gravity);

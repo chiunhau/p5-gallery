@@ -1,9 +1,13 @@
 {
   "name": "p5",
   "projects": [
-    "fake-3d",
-    "fake-3d-2",
+    "isometric",
     "final-project",
-    "physic-engine-demo"
+    "waterFall",
+    "waterFall2",
+    "hola",
+    "tedxntust-cover",
+    "gooey",
+    "river"
   ]
 }

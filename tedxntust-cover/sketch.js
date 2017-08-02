@@ -8,9 +8,9 @@ var counter = 0;
 function setup() {
 	createCanvas(windowWidth, windowHeight);
 	frameRate(60);
-	background(50);
+	background(255);
 	// swatch.add(color('rgba(28, 88, 246, 0.2)'));
-	swatch.add(color('rgba(255, 255, 250, 0.2)'));
+	swatch.add(color('rgba(0, 0, 0, 0.1)'));
 
 	flowfield = new FlowField(10);
 
@@ -44,10 +44,10 @@ function Particle(x, y, m) {
 	this.pos = createVector(x, y);
 	this.vel = createVector(0, 0);
 	this.acc = createVector(0, 0);
-	this.maxSpeed = 100;
+	this.maxSpeed = 5;
 	this.mass = m;
-  this.maxForce = 300;
-	this.maxFieldForce = 100;
+  this.maxForce = 50;
+	this.maxFieldForce = 10;
 }
 
 Particle.prototype.applyForce = function(force) {

@@ -34,9 +34,9 @@ function FlowField(r) {
         //var theta = map(sin(xoff)+cos(yoff),-2,2,0,TWO_PI);
         // Polar to cartesian coordinate transformation to get x and y components of the vector
         this.field[i][j] = createVector(cos(theta),sin(theta));
-        yoff += 0.04;
+        yoff += 0.01;
       }
-      xoff += 0.04;
+      xoff += 0.01;
     }
   };
   this.init();
