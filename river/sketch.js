@@ -2,7 +2,7 @@ var vehicles = [], target, vehiclesCreated = false, isRecording = true;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  background(63, 92, 170);
+  background(65, 90, 169);
   noStroke();
 
   target = createVector(0, 0);
