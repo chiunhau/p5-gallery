@@ -21,7 +21,7 @@ function Vehicle(x, y, m, s) {
 	this.acc = createVector(0, 0);
 	this.mass = m;
 	this.maxspeed = s;
-	this.maxforce = 0.2;
+	this.maxforce = 0.5;
 }
 
 Vehicle.prototype.applyForce = function(f) {
