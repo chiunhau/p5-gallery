@@ -3,7 +3,8 @@ var currentColor = 0;
 var colors = []
 
 function setup() {
-	createCanvas(windowWidth, windowHeight);
+	var canvas = createCanvas(windowWidth, windowHeight);
+	canvas.parent('canvas-wrapper');
 
 	colors = [color('#00f'), color('#e4007f'), color('#e9ebee')]
 	document.getElementById('blue').addEventListener('click', function() {
@@ -23,31 +24,34 @@ function draw() {
 }
 
 function mousePressed() {
-	if (currentColor !== 2) {
-		paint(mouseX, mouseY);
-	}
-	else {
-		erase(mouseX, mouseY);
+	if (mouseX > 50 && mouseY > 0) {
+		if (currentColor !== 2) {
+			paint(mouseX, mouseY);
+		}
+		else {
+			erase(mouseX, mouseY);
+		}
 	}
 }
 
 function mouseDragged() {
-	if (currentColor !== 2) {
-		paint(mouseX, mouseY);
+	if (mouseX > 50 && mouseY > 0) {
+		if (currentColor !== 2) {
+			paint(mouseX, mouseY);
+		}
+		else {
+			erase(mouseX, mouseY);
+		}
 	}
-	else {
-		erase(mouseX, mouseY);
-	}
+
 }
 
 
 function paint(centerX, centerY) {
-	for(var i = 0; i < 2000; i ++) {
+	for(var i = 0; i < 2500; i ++) {
 		noStroke();
-		// fill(lerpColor(pink, blue, 0.5));
-		// fill(lerpColor(pink, blue, (Math.sin(frameCount * 0.05) + 1) * 0.5));
 		fill(colors[currentColor]);
-		ellipse(centerX + randomGaussian(40, 40) -40  , centerY + randomGaussian(40, 40) - 40 , 1, 1);
+		ellipse(centerX + randomGaussian(0, 35)  , centerY + randomGaussian(0, 35) , 1, 1);
 	}
 }
 
