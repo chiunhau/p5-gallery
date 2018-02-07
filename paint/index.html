@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>paint</title>
+
+	<script src="../libraries/p5.js"></script>
+	<script src="../libraries/p5.dom.js"></script>
+	<script src="../libraries/p5.sound.js"></script>
+
+
+	<style>
+		html, body {
+      margin:0;
+			padding:0;
+			overflow: hidden;
+			background-color: #e9ebee;
+		}
+		canvas {
+			margin:auto;
+		}
+
+		#logo {
+			max-width: 100%;
+			 filter:blur(0.5px);
+			 opacity: 0.99;
+			position: absolute;
+			width: 500px;
+			left: 0;
+			right: 0;
+			top: 50%;
+    transform: translateY(-50%);
+			margin: auto;
+			z-index: 10;
+			user-drag: none;
+user-select: none;
+-moz-user-select: none;
+-webkit-user-drag: none;
+-webkit-user-select: none;
+-ms-user-select: none;
+		}
+		.control {
+			position: fixed;
+			bottom: 20px;
+			left: 50px;
+
+		}
+		.color {
+			display: inline-block;
+			margin-left: 10px;
+			width: 40px;
+			height: 40px;
+			border-radius: 50%;
+			vertical-align: middle;
+		}
+
+		.color:hover {
+			cursor: pointer;
+		}
+
+		.color.-blue {
+			background-color: #00f;
+		}
+
+		.color.-pink {
+			background-color: #e4007f;
+		}
+		.color.-eraser {
+			background-color: #e9ebee;
+			border: 1px solid #aaa;
+		}
+
+
+		.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+	</style>
+</head>
+<body>
+	<img src="logo.svg" alt="" id="logo">
+	<div class="control noselect">
+		<div class="color -blue" id="blue"></div>
+		<div class="color -pink" id="pink"></div>
+		<div class="color -eraser" id="eraser"></div>
+	</div>
+	<script src="sketch.js"></script>
+</body>
+</html>
