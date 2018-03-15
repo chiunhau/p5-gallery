@@ -25,38 +25,39 @@ function draw() {
 
 function mousePressed() {
 	if (mouseX > 50 && mouseY > 0) {
-		if (currentColor !== 2) {
-			paint(mouseX, mouseY);
-		}
-		else {
-			erase(mouseX, mouseY);
-		}
+		paint(mouseX, mouseY);
+		// if (currentColor !== 2) {
+		// 	paint(mouseX, mouseY);
+		// }
+		// else {
+		// 	erase(mouseX, mouseY);
+		// }
 	}
 }
 
 function mouseDragged() {
 	if (mouseX > 50 && mouseY > 0) {
-		if (currentColor !== 2) {
+		// if (currentColor !== 2) {
 			paint(mouseX, mouseY);
-		}
-		else {
-			erase(mouseX, mouseY);
-		}
+		// }
+		// else {
+		// 	erase(mouseX, mouseY);
+		// }
 	}
 
 }
 
 
 function paint(centerX, centerY) {
-	for(var i = 0; i < 2500; i ++) {
+	for(var i = 0; i < 1000; i ++) {
 		noStroke();
 		fill(colors[currentColor]);
 		ellipse(centerX + randomGaussian(0, 35)  , centerY + randomGaussian(0, 35) , 1, 1);
 	}
 }
 
-function erase(centerX, centerY) {
-	noStroke();
-	fill(colors[currentColor]);
-	ellipse(centerX, centerY, 200, 200);
-}
+// function erase(centerX, centerY) {
+// 	noStroke();
+// 	fill(colors[currentColor]);
+// 	ellipse(centerX, centerY, 200, 200);
+// }
